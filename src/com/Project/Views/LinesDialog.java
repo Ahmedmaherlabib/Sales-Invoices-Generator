@@ -1,7 +1,11 @@
 package com.Project.Views;
+import com.Project.Controller.LisenersOfInvoices;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 public class LinesDialog extends JDialog{
     private JTextField itemNameField;
     private JTextField itemCountField;

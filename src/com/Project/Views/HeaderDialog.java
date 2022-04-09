@@ -1,4 +1,5 @@
 package com.Project.Views;
+import com.Project.Controller.LisenersOfInvoices;
 import javax.swing.*;
 import java.awt.*;
 public class HeaderDialog extends JDialog {

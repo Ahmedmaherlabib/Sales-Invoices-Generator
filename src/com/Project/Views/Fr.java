@@ -1,17 +1,16 @@
 package com.Project.Views;
-
 import com.Project.Controller.LisenersOfInvoices;
 import com.Project.InvoicesModel.HeaderTableModel;
 import com.Project.InvoicesModel.InvoiceHeader;
 import com.Project.InvoicesModel.LinesTableModel;
-
-import javax.swing.*;
-import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.*;
+import javax.swing.JTable;
+import java.awt.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 public class Fr extends JFrame  {
     private JScrollPane scroll1;
