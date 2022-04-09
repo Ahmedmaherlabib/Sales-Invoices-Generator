@@ -1,4 +1,4 @@
-package com.Project.Invoices;
+package com.Project.InvoicesModel;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ public class InvoiceHeader {
     private ArrayList<InvoiceLines> Lines;
     public InvoiceHeader(int invoiceNum, String customerName, Date date) {
         this.invoiceNum = invoiceNum;
-        CustomerName = customerName;
+        this.CustomerName = customerName;
         this.date = date;
         //this.Lines= new ArrayList<>();//eager creation
     }
@@ -40,11 +40,12 @@ public class InvoiceHeader {
 
     @Override
     public String toString() {
-        return "InvoiceHeader{" +
-                "invoiceNum=" + invoiceNum +
-                ", CustomerName='" + CustomerName + '\'' +
-                ", date=" + date +
-                '}';
+        String str= "InvoiceHeader{" + "invoiceNum=" + invoiceNum + ", CustomerName='"
+                + CustomerName + '\'' + ", date=" + date + '}';
+        for (InvoiceLines line : getLines()) {
+            str += "\n\t" + line;
+        }
+        return str;
     }
 
     public String getCustomerName() {

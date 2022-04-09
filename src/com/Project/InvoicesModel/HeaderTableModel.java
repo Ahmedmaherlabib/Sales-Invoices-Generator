@@ -1,24 +1,25 @@
-package com.Project.Invoices;
+package com.Project.InvoicesModel;
 import javax.swing.table.AbstractTableModel;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
-
-public class LinesTableModel extends AbstractTableModel {
-    private static List<InvoiceLines> InvoiceLines;
+public class HeaderTableModel extends AbstractTableModel {
+    private static List<InvoiceHeader>InvoiceHeadersList;
     private DateFormat df= new SimpleDateFormat("dd-MM-yyyy");
-    public LinesTableModel(List<InvoiceLines> InvoiceHeadersList) {
-        this.InvoiceLines=InvoiceHeadersList;
+    public HeaderTableModel(List<InvoiceHeader> InvoiceHeadersList) {
+          this.InvoiceHeadersList=InvoiceHeadersList;
 
     }
-
-
-    public List<InvoiceLines> getInvoiceLines() {
-        return InvoiceLines;
+    public List<InvoiceHeader> getInvoicesList() {
+        return InvoiceHeadersList;
     }
+    public static List<InvoiceHeader> getInvoiceHeadersList() {
+        return InvoiceHeadersList;
+    }
+
     @Override
     public int getRowCount() {
-        return InvoiceLines.size();}
+        return InvoiceHeadersList.size();}
     @Override
     public int getColumnCount() {
         return 4;
@@ -27,13 +28,13 @@ public class LinesTableModel extends AbstractTableModel {
     public String getColumnName(int i) {
         switch (i){
             case 0:
-                return "Item Name";
+                return "Invoice Number";
             case 1:
-                return "Item Price";
+                return "Customer Name";
             case 2:
-                return "Item Count";
+                return "Invoice Date";
             case 3:
-                return "Line Total";
+                return "Invoice Total";
         }
         return "";
     }
@@ -41,11 +42,11 @@ public class LinesTableModel extends AbstractTableModel {
     public Class<?> getColumnClass(int i) {
         switch (i){
             case 0:
-                return String.class;
-            case 1:
-                return Double.class;
-            case 2:
                 return Integer.class;
+            case 1:
+                return String.class;
+            case 2:
+                return String.class;
             case 3:
                 return Double.class;
         }
@@ -59,16 +60,16 @@ public class LinesTableModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int i, int i1) {
-        InvoiceLines ROW=InvoiceLines.get(i);
+        InvoiceHeader ROW=InvoiceHeadersList.get(i);
         switch (i1){
             case 0:
-                return ROW.getItemName() ;
+                return ROW.getInvoiceNum() ;
             case 1:
-                return ROW.getItemPrice();
+                return ROW.getCustomerName();
             case 2:
-                return ROW.getItemCount();
+                return df.format(ROW.getDate());
             case 3:
-                return ROW.getLinesTotal();
+                return ROW.getInvoiceTotal();
         }
         return null;
     }

@@ -1,10 +1,7 @@
-package com.Project.Dialogs;
-import com.Project.Fr;
-import java.awt.GridLayout;
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+package com.Project.Views;
+
+import javax.swing.*;
+import java.awt.*;
 public class LinesDialog extends JDialog{
     private JTextField itemNameField;
     private JTextField itemCountField;
@@ -25,8 +22,8 @@ public class LinesDialog extends JDialog{
         cancelBtn = new JButton("Cancel");
         okBtn.setActionCommand("createLineOK");
         cancelBtn.setActionCommand("createLineCancel");
-        okBtn.addActionListener(frame);
-        cancelBtn.addActionListener(frame);
+        okBtn.addActionListener(frame.getLiseners());
+        cancelBtn.addActionListener(frame.getLiseners());
         setLayout(new GridLayout(4, 2));
         setLocation(100,100);
         add(itemNameLbl);

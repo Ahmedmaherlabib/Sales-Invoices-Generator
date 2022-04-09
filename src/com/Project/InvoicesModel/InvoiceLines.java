@@ -1,4 +1,4 @@
-package com.Project.Invoices;
+package com.Project.InvoicesModel;
 
 public class InvoiceLines {
     private String ItemName;
