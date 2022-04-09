@@ -1,5 +1,6 @@
 package com.Project.Views;
 import com.Project.Controller.LisenersOfInvoices;
+import com.Project.Controller.FileOperations;
 import com.Project.InvoicesModel.HeaderTableModel;
 import com.Project.InvoicesModel.InvoiceHeader;
 import com.Project.InvoicesModel.LinesTableModel;
@@ -40,6 +41,7 @@ public class Fr extends JFrame  {
     private HeaderTableModel model;
     private LinesTableModel model2;
     private LisenersOfInvoices liseners=new LisenersOfInvoices(this);
+    private FileOperations operations=new FileOperations(this);
 
     public void setDialog1(HeaderDialog dialog1) {
         this.dialog1 = dialog1;
